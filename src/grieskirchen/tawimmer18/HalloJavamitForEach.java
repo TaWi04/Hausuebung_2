@@ -2,6 +2,7 @@ package grieskirchen.tawimmer18;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -25,9 +26,14 @@ public class HalloJavamitForEach {
             System.out.println(string);
         }         
     }
-     public void printWithMethodforEach(){
-            
-        }
+     public void printWithMethodForEach(){
+     list.forEach((string) -> System.out.println(string));
+     }
+     public void printWithConsumerInterface(){
+         Consumer<String> consumer = (String string) -> System.out.println(string);
+         list.forEach(consumer);
+         list.forEach(System.out::print);
+     }
  
     
 }
