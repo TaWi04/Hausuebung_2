@@ -11,6 +11,12 @@ package numbertester;
  */
 public class Main {
     public static void main(String[] args) {
-        
+        NumberTest oddTester = (n) -> (n%2) == 1;
+        NumberTest primeTester;
+        NumberTest palindromeTester;
+        String fileName = null;
+        NumberTester nt = new NumberTester(fileName);
+        nt.setOddEvenTester(oddTester = (n) -> (n%2) == 1);
+        nt.testNumber(1);
     }
 }
