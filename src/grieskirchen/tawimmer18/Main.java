@@ -26,6 +26,7 @@ public class Main {
  HalloJavamitForEach halloJava = new HalloJavamitForEach(list);
  halloJava.printForEach();
  halloJava.printWithMethodForEach();
+ halloJava.printWithConsumerInterface();
     }
 
          

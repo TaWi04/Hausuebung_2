@@ -22,17 +22,21 @@ public class HalloJavamitForEach {
     }
     
     public void printForEach(){
+        System.out.println("method: printForEach");
         for (String string : list) {
             System.out.println(string);
         }         
     }
      public void printWithMethodForEach(){
+        System.out.println("method: printWithMethodForEach");
      list.forEach((string) -> System.out.println(string));
      }
      public void printWithConsumerInterface(){
+        System.out.println("method: printWithConsumerInterface");
          Consumer<String> consumer = (String string) -> System.out.println(string);
          list.forEach(consumer);
-         list.forEach(System.out::print);
+        System.out.println("method: printWithConsumerInterface");
+         list.forEach(System.out::println);
      }
  
     
