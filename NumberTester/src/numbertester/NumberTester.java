@@ -9,13 +9,38 @@ package numbertester;
  *
  * @author tawimmer18
  */
-public class NumberTester {
+public class NumberTester implements NumberTest{
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    
+    private String fileName;
+    private NumberTest oddTester;
+    private NumberTest primeTester;
+    private NumberTest palindromeTester;
+   
+    
+
+    public NumberTester(String fileName) {
+        
+    }
+    public void setOddEvenTester(NumberTest oddTester){
+        this.oddTester = oddTester;
+    }
+    public void setPrimeTester(NumberTest primeTester){
+    this.primeTester = primeTester;
     }
     
+    public void setPalindromeTester(NumberTest palindromeTester){
+        this.palindromeTester = palindromeTester;
+        //to string -> revers string -> to integer -> 1. == 2.
+    }
+    public void testFile(){
+        //TODO
+    }
+
+    @Override
+    public boolean testNumber(int number) {//TODO
+        return false;}
 }
