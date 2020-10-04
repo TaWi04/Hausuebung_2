@@ -10,13 +10,15 @@ package numbertester;
  * @author tawimmer18
  */
 public class Main {
+    public static String fileName = "File.txt";
     public static void main(String[] args) {
-        NumberTest oddTester = (n) -> (n%2) == 1;
-        NumberTest primeTester;
-        NumberTest palindromeTester;
-        String fileName = null;
         NumberTester nt = new NumberTester(fileName);
-        nt.setOddEvenTester(oddTester = (n) -> (n%2) == 1);
-        nt.testNumber(1);
+       nt.testFile(fileName);
+       // oddEvenTester(nt);
+       //palindromeTester(nt);
+       // nt.testFile(fileName);
+       
     }
+    
+    
 }
