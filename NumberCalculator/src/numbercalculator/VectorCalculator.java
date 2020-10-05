@@ -13,17 +13,26 @@ public class VectorCalculator extends AbstractCalculator{
 
     public VectorCalculator() {
         super((x,y)->{
-            return null;
+            Number solution = new Number();
+            solution.setA(x.getA()+y.getA());
+            solution.setB(x.getB()+y.getB());
+            return solution;
             
         }, (x,y)->{
-            return null;
+            Number solution = new Number();
+            solution.setA(x.getA()+y.getA());
+            solution.setB(x.getB()+y.getB());
+            return solution;
             
-        }, (x,y)->{
-            return null;
+        }, (x,y)->{ 
+            Number solution = new Number();
+            solution.setA(x.getA()*y.getB()-x.getB()*y.getA());
+            return solution;
             
-        }, (x,y)->{
-            return null;
-            
+        }, (x,y)->{ 
+            Number solution = new Number();
+            solution.setA(x.getA() * y.getA() + x.getB() * y.getB());
+            return solution;
         });
     }
     
