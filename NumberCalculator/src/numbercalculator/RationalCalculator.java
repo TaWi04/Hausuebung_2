@@ -12,18 +12,30 @@ package numbercalculator;
 public class RationalCalculator extends AbstractCalculator{
 
     public RationalCalculator() {
+        
+           
         super((x,y)->{
-            return null;
+            Number solution = new Number();
+            solution.setB(x.getB()*y.getB());
+            solution.setA(x.getA()*y.getB()+y.getA()*x.getB());
+            return solution;
             
         }, (x,y)->{
-            return null;
+            Number solution = new Number();
+            solution.setB(x.getB()*y.getB());
+            solution.setA(x.getA()*y.getB()-y.getA()*x.getB());
+            return solution;
             
         }, (x,y)->{
-            return null;
-            
+            Number solution = new Number();
+            solution.setA(x.getA()*y.getA());
+            solution.setB(x.getB()*y.getB());
+            return solution;            
         }, (x,y)->{
-            return null;
-            
+            Number solution = new Number();
+            solution.setA(x.getA()*y.getB());
+            solution.setB(x.getB()*y.getA());
+            return solution;
         });
     }
     
