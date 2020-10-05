@@ -13,16 +13,30 @@ public class ComplexCalculator extends AbstractCalculator{
 
     public ComplexCalculator() {
         super((x,y)->{
-            return null;
+            Number solution = new Number();
+            solution.setA(x.getA() + y.getA());
+            solution.setB(x.getB() + y.getB());
+            return solution;
             
         }, (x,y)->{
-            return null;
+            Number solution = new Number();
+            solution.setA(x.getA() - y.getA());
+            solution.setB(x.getB() - y.getB());
+            return solution;
             
         }, (x,y)->{
-            return null;
-            
+            Number solution = new Number();
+            solution.setA(x.getA() * y.getA() + ((x.getB()*y.getB()) *(-1)));
+            solution.setB((x.getA() * y.getB()) + (x.getB()*y.getA()));
+            return solution;
+           
         }, (x,y)->{
-            return null;
+            Number solution = new Number();
+            double divider = Math.pow(y.getA(), 2) + Math.pow(y.getB(), 2);
+            solution.setA((x.getA() * y.getA() + x.getB()*y.getB())/divider); 
+            solution.setB((x.getB()*y.getA()-(x.getA() * y.getB()))/divider); 
+            return solution;
+            
             
         });
     }
