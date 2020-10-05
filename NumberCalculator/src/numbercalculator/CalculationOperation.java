@@ -9,13 +9,6 @@ package numbercalculator;
  *
  * @author Tamara
  */
-public class NumberCalculator {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+public interface CalculationOperation {
+    Number calc(Number x, Number y);
 }
