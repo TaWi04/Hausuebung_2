@@ -28,7 +28,19 @@ public class Main {
         int action =0;
         do {            
             System.out.println(menu);
-            action = Integer.parseInt(scanner.nextLine());
+            try {
+                do{
+                    String input = scanner.nextLine();
+                    action = Integer.parseInt(input);
+                    } while (action < 0 || action > 4);
+                
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a NUMBER!");
+                do {                        
+                        action = Integer.parseInt(scanner.nextLine());
+                    } while (action < 0 && action > 4);
+            }
+            
             Number x;
             Number y;
             Number result;
@@ -85,11 +97,17 @@ public class Main {
        }
     public static Number setNumber(char var){
         Number number = new Number();
-        
-         System.out.println("Enter number "+var +" a>");
+        try {
+               System.out.println("Enter number "+var +" a>");
          number.setA(Double.parseDouble(scanner.nextLine()));
          System.out.println("Enter number "+var +" b>");
          number.setB(Double.parseDouble(scanner.nextLine()));
+                
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a NUMBER!");
+                setNumber(var);
+            }
+         
         return number;
     }
     
@@ -99,7 +117,18 @@ public class Main {
                 + "3 - multiply\n"
                 + "4 - divide\n"
                 + "5 - enter numbers again");
-        int action = Integer.parseInt(scanner.nextLine());
+         int action = 0;
+         try {
+                do{
+                    String input = scanner.nextLine();
+                    action = Integer.parseInt(input);
+                    } while (action < 0 || action > 5);
+                
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a NUMBER!");
+                return chooseOperations(x, y);
+            }
+       
         Number result = null;
         switch(action){
             case 1:
@@ -115,33 +144,11 @@ public class Main {
                 result = calculator.divide(x, y);
                 break;
             case 5:
-                chooseOperations(setNumber('x'),setNumber('y'));
-                break;
+                return chooseOperations(setNumber('x'),setNumber('y'));
             default:
                 break;
         }
         return result;
     }
-
-//       
-//        Number solution = vc.multiply(a, b);
-//        System.out.println("multi vc: " +solution.getA());
-//        
-//        
-//         solution = vc.divide(a, b);
-//        System.out.println("divide vc: " +solution.getA());
-//        
-//         solution = cc.multiply(a, b);
-//        System.out.println("mult cc: " +solution.getA()+"/"+solution.getB() +"i");
-//        solution = cc.divide(a, b);
-//        System.out.println("div cc: " +solution.getA()+"/"+solution.getB() +"i");
-//        solution = rc.add(a, b);
-//        System.out.println("add: " + solution.getA()+"/"+solution.getB());
-//         solution = rc.subtract(a, b);
-//        System.out.println("sub: " + solution.getA()+"/"+solution.getB());
-//       solution = rc.multiply(a, b);
-//        System.out.println("mult: " +solution.getA()+"/"+solution.getB());
-//        solution = rc.divide(a, b);
-//        System.out.println("div: " +solution.getA()+"/"+solution.getB());
     
 }
